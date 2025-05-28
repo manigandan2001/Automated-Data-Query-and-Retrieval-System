@@ -1,0 +1,14 @@
+Generated Queries:
+
+test_case1:
+Prompt: Find products from Nike or Sony with more than 200 reviews and rating below 4.5
+Query: {'$and': [{'Brand': {'$in': ['Nike', 'Sony']}}, {'ReviewCount': {'$gt': 200}}, {'Rating': {'$lt': 4.5}}]}
+
+test_case2:
+Prompt: Find all Electronics products that are in stock and have a rating >= 4.5
+Query: {'Category': 'Electronics', 'Stock': True, 'Rating': {'$gte': 4.5}}
+
+test_case3:
+Prompt: Show products launched after Jan 1, 2022 in Home & Kitchen or Sports categories
+Query: {'$and': [{'LaunchDate': {'$gt': datetime.datetime(2022, 1, 1, 0, 0)}}, {'Category': {'$in': ['Home & Kitchen', 'Sports']}}]}
+
